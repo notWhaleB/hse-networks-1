@@ -102,4 +102,4 @@ def user_logout():
 
 if __name__ == '__main__':
     app.secret_key = 'CH)&*H$w07hf9wg3gAS(=1'
-    app.run('0.0.0.0', 5000)
+    app.run('0.0.0.0', 5001)
