@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ping me</title>
+</head>
+<body>
+  <span id="stream"
+        style="font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace">
+    Ping started<br>
+  </span>
+  <script>
+      var request = function() {
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+              if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 200) {
+                  document.getElementById('stream').innerHTML += xmlhttp.responseText;
+                  setTimeout(request, 50);
+              }
+          };
+          xmlhttp.open("GET", "/user/ops/ping/poll/", true);
+          xmlhttp.send();
+      };
+
+      setTimeout(request, 0);
+  </script>
+</body>
+</html>

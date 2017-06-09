@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Authentication</title>
+  <link rel="stylesheet" href="/static/css/auth.css">
+</head>
+<body>
+  <div class="content">
+    <div class="auth">
+      <h3>Log in</h3>
+      <form method="post">
+        {% if error %}
+          <span style="color: red">{{ error }}</span><br>
+        {% endif %}
+        <input type="text" placeholder="Username" name="user" value="{{ user }}"><br>
+        <input type="password" placeholder="Password" name="passwd"><br>
+        <button>Log in</button> <a href="/user/signup/">Sign up</a>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
